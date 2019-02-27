@@ -8,3 +8,10 @@
 解决方法：
 
 失了志，都看到dir()返回的结果是正确了...直接提取就行了...不过这没有从根本上解决这个问题
+
+参考flask的from_object()
+
+def from_object(obj):
+    for key in dir(obj):
+        if key.isupper():
+            self[key] = getattr(obj, key)
